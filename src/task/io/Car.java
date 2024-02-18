@@ -3,13 +3,6 @@ package task.io;
 import java.util.Scanner;
 
 public class Car {
-    public static void main(String[] args) {
-        // TODO: Создайте класс, который представляет автомобиль. Реализуйте метод для запуска двигателя.
-        //  Обработайте исключение, если двигатель уже запущен.
-        startingTheEngine();
-
-
-    }
 
     public static void startingTheEngine() {
         Scanner console = new Scanner(System.in);

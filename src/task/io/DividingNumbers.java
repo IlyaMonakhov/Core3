@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DividingNumbers {
-    public static void main(String[] args) throws Exception {
+    public static void dividingNum() throws Exception {
         // TODO: Напишите программу, которая делит одно число на другое и выводит результат. Обработайте
         //  исключение, если введены некорректные данные (например, вместо числа введена строка).
         Scanner input = new Scanner(System.in);

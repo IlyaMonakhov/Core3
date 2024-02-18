@@ -1,12 +1,10 @@
 package task.io;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class PrintReadtheFile {
-    public static void main(String[] args) throws Exception {
+public class PrintReadTheFile {
+    public static void printData() throws Exception {
         // TODO: Напишите программу, которая считывает данные из файла и выводит их на экран. Обработайте
         //  исключение, если файл не найден.
         FileReader reader = null;

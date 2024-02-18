@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListOfStudents {
-    public static void main(String[] args) {
+    public static void listStudents() {
 
 
         // TODO: Реализуйте класс, который представляет список студентов. Реализуйте метод для добавления
         //  студента в список. Обработайте исключение, если список уже содержит студента с таким же именем.
-        List<String> listOfStudents = new ArrayList<>();
-        listOfStudents.add("Мария");
-        listOfStudents.add("Степан");
-        listOfStudents.add("Игорь");
+        List<String> students = new ArrayList<>();
+        students.add("Мария");
+        students.add("Степан");
+        students.add("Игорь");
         String studentName = "Илья";
-        addingStudentsToTheList(listOfStudents,studentName);
-        System.out.println(listOfStudents);
+        addingStudentsToTheList(students,studentName);
+        System.out.println(students);
 
 
     }
