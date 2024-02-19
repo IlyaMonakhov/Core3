@@ -3,7 +3,7 @@ package task.io;
 import java.util.Scanner;
 
 public class BankAccount {
-    public static void Bank() {
+    public void myWalletAccount() {
         // TODO: Создайте класс, который представляет банковский счет. Реализуйте метод для снятия денег со
         //  счета. Обработайте исключение, если на счете недостаточно средств.
         int wallet = 10000;

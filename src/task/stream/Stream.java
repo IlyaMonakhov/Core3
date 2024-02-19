@@ -162,10 +162,10 @@ public class Stream {
 
     // TODO: Найти сумму всех чисел в списке. Описание: Напишите программу, которая принимает список целых чисел в качестве
     //  входных данных и вычисляет их сумму с использованием стримов.
-    public static int sumNumbers(List<Integer> integers) {
+    public static int sumNumbers( List<Integer> integers){
         int sum = integers.stream()
-                .mapToInt(Integer::intValue)
-                .sum();
+                .reduce(0,Integer::sum);
+
         return sum;
     }
 
@@ -225,7 +225,7 @@ public class Stream {
 
 
     // TODO: Соединить все строки из списка в одну строку. Описание: Напишите программу, которая принимает список строк в
-//  качестве входных данных и соединяет их все в одну строку с использованием стримов.
+    //  качестве входных данных и соединяет их все в одну строку с использованием стримов.
     public static String connectingStrings(List<String> listEleven) {
         String result = listEleven.stream().collect(Collectors.joining());
         return result;
@@ -233,7 +233,7 @@ public class Stream {
 
 
     // TODO: Отфильтровать список чисел, оставив только четные числа. Описание: Напишите программу, которая принимает список
-//  чисел в качестве входных данных и фильтрует его, оставляя только четные числа с использованием стримов.
+    //  чисел в качестве входных данных и фильтрует его, оставляя только четные числа с использованием стримов.
     public static List<Integer> filter(List<Integer> listTwelve) {
         List<Integer> listFilter = listTwelve.stream().filter(e -> e % 2 == 0).collect(Collectors.toList());
         return listFilter;

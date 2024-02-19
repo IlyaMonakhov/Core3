@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListOfStudents {
-    public static void listStudents() {
+    public void listStudents() {
 
 
         // TODO: Реализуйте класс, который представляет список студентов. Реализуйте метод для добавления

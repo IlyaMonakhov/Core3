@@ -127,7 +127,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Напишите программу, которая считывает число с клавиатуры и выводит его квадрат. Обработайте
     //  исключение, если введено не число
-    public static void squareOfTheNumber() {
+    public void squareOfTheNumber() {
         Scanner console = new Scanner(System.in);
         try {
             System.out.println("Введите число");
@@ -255,50 +255,25 @@ public class ReadWriteFileExceptionHandling {
     // TODO: Напишите программу, которая создает файл из текста, который подается строкой, а потом
     //  считывает первое слово из файла
     public static void fileFromTheText() {
-        Scanner console = new Scanner(System.in);
-        FileWriter writer = null;
-        try {
+        try (Scanner console = new Scanner(System.in);
+             FileWriter writer = new FileWriter("C:\\Users\\Пользователь\\Desktop\\Str.txt")) {
+
             System.out.println("Введите текст для записи в файл:");
             String text = console.nextLine();
 
-            File file = new File("C:\\Users\\Пользователь\\Desktop\\Str.txt");
-
-
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            writer = new FileWriter(file);
             writer.write(text);
             System.out.println("Файл создан и записан!");
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                if (writer != null) {
-                    writer.close();
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
 
-        FileReader reader = null;
-        try {
-            reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\Str.txt");
-            Scanner fileScanner = new Scanner(reader);
+        try (FileReader reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\Str.txt");
+             Scanner fileScanner = new Scanner(reader)) {
+
             String firstWord = fileScanner.next();
             System.out.println("Первое слово из файла: " + firstWord);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                if (reader != null) {
-                    reader.close();
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
