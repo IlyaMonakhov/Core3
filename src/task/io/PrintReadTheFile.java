@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PrintReadTheFile {
-    public static void printData() throws Exception {
+    public void printData() throws Exception {
         // TODO: Напишите программу, которая считывает данные из файла и выводит их на экран. Обработайте
         //  исключение, если файл не найден.
         FileReader reader = null;

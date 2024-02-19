@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class CreatingFileRecordConsole {
-    public static void fileRecordConsole() throws IOException {
+    public void fileRecordConsole() throws IOException {
 
 
         // TODO: Напишите программу, в которой при запуске приложения вы вводите в консоль текст и на основе

@@ -24,32 +24,30 @@ public class Stream {
         //1 задача
         Scanner scanner = new Scanner(System.in);
         List<Integer> integers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-        sumNumbers(integers);
         StreamSumNumbers streamSumNumbers = new StreamSumNumbers();
-        StreamSumNumbers.sumNumbers(integers);
-        System.out.println(StreamSumNumbers.sumNumbers(integers));
+        streamSumNumbers.sumNumbers(integers);
+        System.out.println(streamSumNumbers.sumNumbers(integers));
 
 
         //2 задача
         List<Integer> listSecond = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamAverageValue streamAverageValue = new StreamAverageValue();
-        StreamAverageValue.averageValue(listSecond);
-        System.out.println(StreamAverageValue.averageValue(listSecond));
+        streamAverageValue.averageValue(listSecond);
+        System.out.println(streamAverageValue.averageValue(listSecond));
 
 
         //3 задача
         List<Integer> listFive = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamMaxNumber streamMaxNumber = new StreamMaxNumber();
-        StreamMaxNumber.maxElement(listFive);
-        System.out.println(StreamMaxNumber.maxElement(listFive));
+        streamMaxNumber.maxElement(listFive);
+        System.out.println(streamMaxNumber.maxElement(listFive));
 
 
         //4 задача
         List<Integer> listSix = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-        minElement(listSix);
         StreamMinNumber streamMinNumber = new StreamMinNumber();
-        StreamMinNumber.minElement(listSix);
-        System.out.println(StreamMinNumber.minElement(listSix));
+        streamMinNumber.minElement(listSix);
+        System.out.println(streamMinNumber.minElement(listSix));
 
 
         //5 задача
@@ -57,34 +55,33 @@ public class Stream {
         int element = scanner.nextInt();
         StreamAnyMatch streamAnyMatch = new StreamAnyMatch();
         streamAnyMatch.anyMatch(listSeven, element);
-        boolean containsElement = anyMatch(listSeven, element);
+        boolean containsElement = streamAnyMatch.anyMatch(listSeven, element);
         System.out.println(containsElement);
 
         //6 задача
 
         List<Integer> listEight = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamDistinct streamDistinct = new StreamDistinct();
-        StreamDistinct.distinctNumber(listEight);
-        System.out.println(distinctNumber(listEight));
+        streamDistinct.distinctNumber(listEight);
+        System.out.println(streamDistinct.distinctNumber(listEight));
 
         //7 задача
         List<String> listTen = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
         StreamMap streamMap = new StreamMap();
-        StreamMap.listLengths(listTen);
-        System.out.println(listLengths(listTen));
+        streamMap.listLengths(listTen);
+        System.out.println(streamMap.listLengths(listTen));
 
         //8 задача
         List<String> listEleven = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
         StreamConnecting streamConnecting = new StreamConnecting();
-        StreamConnecting.connectingStrings(listEleven);
-        connectingStrings(listEleven);
-        System.out.println(connectingStrings(listEleven));
+        streamConnecting.connectingStrings(listEleven);
+        System.out.println(streamConnecting.connectingStrings(listEleven));
 
         //9 задача
         List<Integer> listTwelve = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamFilter streamFilter = new StreamFilter();
-        StreamFilter.filter(listTwelve);
-        System.out.println(filter(listTwelve));
+        streamFilter.filter(listTwelve);
+        System.out.println(streamFilter.filter(listTwelve));
 
 
     }
@@ -162,7 +159,7 @@ public class Stream {
 
     // TODO: Найти сумму всех чисел в списке. Описание: Напишите программу, которая принимает список целых чисел в качестве
     //  входных данных и вычисляет их сумму с использованием стримов.
-    public static int sumNumbers( List<Integer> integers){
+    public int sumNumbers( List<Integer> integers){
         int sum = integers.stream()
                 .reduce(0,Integer::sum);
 
@@ -173,7 +170,7 @@ public class Stream {
 // TODO: Найти среднее значение всех чисел в списке. Описание: Напишите программу, которая принимает список чисел в качестве
 //  входных данных и вычисляет их среднее значение с использованием стримов.
 
-    public static int averageValue(List<Integer> listSecond) {
+    public int averageValue(List<Integer> listSecond) {
         int sum = listSecond.stream()
                 .mapToInt(Integer::intValue)
                 .sum();
@@ -183,7 +180,7 @@ public class Stream {
 
     // TODO: Найти наибольшее число в списке. Описание: Напишите программу, которая принимает список чисел в качестве входных
     //  данных и находит наибольшее число с использованием стримов.
-    public static int maxElement(List<Integer> listFive) {
+    public int maxElement(List<Integer> listFive) {
         Integer max = listFive.stream().max(Integer::compare).get();
         return max;
 
@@ -191,7 +188,7 @@ public class Stream {
 
     // TODO: Найти наименьшее число в списке. Описание: Напишите программу, которая принимает список чисел в качестве входных
     //  данных и находит наименьшее число с использованием стримов.
-    public static int minElement(List<Integer> listSix) {
+    public int minElement(List<Integer> listSix) {
         Integer min = listSix.stream().min(Integer::compare).get();
         return min;
 
@@ -201,7 +198,7 @@ public class Stream {
     // TODO: Проверить, содержит ли список определенное значение. Описание: Напишите программу, которая принимает список
     //  элементов и определенное значение в качестве входных данных и проверяет, содержит ли список это значение с использованием
     //  стримов.
-    public static boolean anyMatch(List<Integer> listSeven, int element) {
+    public boolean anyMatch(List<Integer> listSeven, int element) {
         boolean elementFound = listSeven.stream().anyMatch(e -> e == element);
         return elementFound;
 
@@ -210,7 +207,7 @@ public class Stream {
 
     // TODO: Удалить дубликаты из списка. Описание: Напишите программу, которая принимает список элементов в качестве входных
     //  данных и удаляет все дубликаты, оставляя только уникальные элементы с использованием стримов.
-    public static List<Integer> distinctNumber(List<Integer> listEight) {
+    public List<Integer> distinctNumber(List<Integer> listEight) {
         List<Integer> listDistinct = listEight.stream().distinct().collect(Collectors.toList());
         return listDistinct;
     }
@@ -218,7 +215,7 @@ public class Stream {
 
     // TODO: Преобразовать список строк в список их длин. Описание: Напишите программу, которая принимает список строк в
     //  качестве входных данных и преобразует его в список их длин с использованием стримов.
-    public static List<Integer> listLengths(List<String> listTen) {
+    public List<Integer> listLengths(List<String> listTen) {
         List<Integer> listLength = listTen.stream().map(e -> e.length()).collect(Collectors.toList());
         return listLength;
     }
@@ -226,7 +223,7 @@ public class Stream {
 
     // TODO: Соединить все строки из списка в одну строку. Описание: Напишите программу, которая принимает список строк в
     //  качестве входных данных и соединяет их все в одну строку с использованием стримов.
-    public static String connectingStrings(List<String> listEleven) {
+    public String connectingStrings(List<String> listEleven) {
         String result = listEleven.stream().collect(Collectors.joining());
         return result;
     }
@@ -234,7 +231,7 @@ public class Stream {
 
     // TODO: Отфильтровать список чисел, оставив только четные числа. Описание: Напишите программу, которая принимает список
     //  чисел в качестве входных данных и фильтрует его, оставляя только четные числа с использованием стримов.
-    public static List<Integer> filter(List<Integer> listTwelve) {
+    public List<Integer> filter(List<Integer> listTwelve) {
         List<Integer> listFilter = listTwelve.stream().filter(e -> e % 2 == 0).collect(Collectors.toList());
         return listFilter;
     }

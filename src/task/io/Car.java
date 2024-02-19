@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Car {
 
-    public static void startingTheEngine() {
+    public void startingTheEngine() {
         Scanner console = new Scanner(System.in);
 
         try {

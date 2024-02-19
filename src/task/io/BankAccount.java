@@ -13,7 +13,7 @@ public class BankAccount {
 
 
     }
-    public static int withdrawalOfMoney(int wallet, int withdrawal){
+    public int withdrawalOfMoney(int wallet, int withdrawal){
         try {
             int remains = wallet - withdrawal;
             if (withdrawal<wallet){

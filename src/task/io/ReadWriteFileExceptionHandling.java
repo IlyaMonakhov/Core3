@@ -1,10 +1,8 @@
 package task.io;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -14,11 +12,11 @@ public class ReadWriteFileExceptionHandling {
 
         //Задача 1
         CreatingFile creatingFile = new CreatingFile();
-        CreatingFile.creatingFile();
+        creatingFile.creatingFile();
 
         //Задача 2
         CreatingFileRecordConsole creatingFileRecordConsole = new CreatingFileRecordConsole();
-        CreatingFileRecordConsole.fileRecordConsole();
+        creatingFileRecordConsole.fileRecordConsole();
 
         //Задача 3
         int firstNumber = 10;
@@ -30,18 +28,18 @@ public class ReadWriteFileExceptionHandling {
 
         //Задача 4
         NumberSquare numberSquare = new NumberSquare();
-        NumberSquare.squareOfTheNumber();
+        numberSquare.squareOfTheNumber();
 
         //5 задача
         BankAccount bankAccount = new BankAccount();
         int wallet = 10000;
         Scanner console = new Scanner(System.in);
         int withdrawal = console.nextInt();
-        BankAccount.withdrawalOfMoney(wallet, withdrawal);
+        bankAccount.withdrawalOfMoney(wallet, withdrawal);
 
         //6 задача
         PrintReadTheFile printReadTheFile = new PrintReadTheFile();
-        PrintReadTheFile.printData();
+        printReadTheFile.printData();
 
 
         //7 задача
@@ -52,20 +50,20 @@ public class ReadWriteFileExceptionHandling {
         List<String> students = List.of("Мария", "Степан", "Игорь");
         String studentName = "Илья";
         ListOfStudents listOfStudents = new ListOfStudents();
-        ListOfStudents.addingStudentsToTheList(students, studentName);
+        listOfStudents.addingStudentsToTheList(students, studentName);
 
         //9 задача
         DividingNumbers dividingNumbers = new DividingNumbers();
-        DividingNumbers.dividingNum();
+        dividingNumbers.dividingNum();
 
         //10 задача
 
         Car car = new Car();
-        Car.startingTheEngine();
+        car.startingTheEngine();
 
         //11 задача
         NewFile newFile = new NewFile();
-        NewFile.fileFromTheText();
+        newFile.fileFromTheText();
 
 
     }
@@ -74,7 +72,7 @@ public class ReadWriteFileExceptionHandling {
 
     //     TODO: Напишите программу, которая создает новый файл и записывает в него данные, которые передаются
     //      строкой
-    public static void creatingFile() throws IOException {
+    public void creatingFile() throws IOException {
         String expression = "Привет , меня зовут Илья . Я учу Java";
         FileWriter writer = null;
         try {
@@ -94,7 +92,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Напишите программу, в которой при запуске приложения вы вводите в консоль текст и на основе
     //  введенного текста создается файл
-    public static void fileRecordConsole() throws IOException {
+    public void fileRecordConsole() throws IOException {
         Scanner console = new Scanner(System.in);
         String plans = console.nextLine();
         FileWriter fileWriter = null;
@@ -143,7 +141,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Создайте класс, который представляет банковский счет. Реализуйте метод для снятия денег со
     //  счета. Обработайте исключение, если на счете недостаточно средств.
-    public static int withdrawalOfMoney(int wallet, int withdrawal) {
+    public int withdrawalOfMoney(int wallet, int withdrawal) {
         try {
             int remains = wallet - withdrawal;
             if (withdrawal < wallet) {
@@ -157,7 +155,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Напишите программу, которая считывает данные из файла и выводит их на экран. Обработайте
     //  исключение, если файл не найден.
-    public static void printData() throws Exception {
+    public void printData() throws Exception {
         FileReader reader = null;
         try {
             reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\File.txt.txt");
@@ -195,7 +193,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Реализуйте класс, который представляет список студентов. Реализуйте метод для добавления
     //  студента в список. Обработайте исключение, если список уже содержит студента с таким же именем.
-    public static void addingStudentsToTheList(List<String> students, String studentName) {
+    public void addingStudentsToTheList(List<String> students, String studentName) {
         try {
             if (students.contains(studentName)) {
                 throw new RuntimeException();
@@ -210,7 +208,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Напишите программу, которая делит одно число на другое и выводит результат. Обработайте
     //  исключение, если введены некорректные данные (например, вместо числа введена строка).
-    public static void dividingNum() throws Exception {
+    public void dividingNum() throws Exception {
         Scanner input = new Scanner(System.in);
         System.out.println("Введите первое целое число: ");
 
@@ -233,7 +231,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Создайте класс, который представляет автомобиль. Реализуйте метод для запуска двигателя.
     //  Обработайте исключение, если двигатель уже запущен.
-    public static void startingTheEngine() {
+    public void startingTheEngine() {
         Scanner console = new Scanner(System.in);
 
         try {
@@ -254,7 +252,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Напишите программу, которая создает файл из текста, который подается строкой, а потом
     //  считывает первое слово из файла
-    public static void fileFromTheText() {
+    public void fileFromTheText() {
         try (Scanner console = new Scanner(System.in);
              FileWriter writer = new FileWriter("C:\\Users\\Пользователь\\Desktop\\Str.txt")) {
 

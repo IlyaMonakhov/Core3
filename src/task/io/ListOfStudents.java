@@ -19,7 +19,7 @@ public class ListOfStudents {
 
 
     }
-    public static void addingStudentsToTheList( List<String> listOfStudents, String studentName ){
+    public void addingStudentsToTheList( List<String> listOfStudents, String studentName ){
         try {
             if (listOfStudents.contains(studentName)){
                 throw new RuntimeException();

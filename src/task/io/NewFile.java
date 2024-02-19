@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class NewFile {
-    public static void fileFromTheText() {
+    public void fileFromTheText() {
         // TODO: Напишите программу, которая создает файл из текста, который подается строкой, а потом
         //  считывает первое слово из файла
         try (Scanner console = new Scanner(System.in);

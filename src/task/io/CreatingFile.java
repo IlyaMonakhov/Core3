@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CreatingFile {
-    public static void creatingFile() throws IOException {
+    public void creatingFile() throws IOException {
 //        TODO: Напишите программу, которая создает новый файл и записывает в него данные, которые передаются
 //         строкой
         String expression = "Привет , меня зовут Илья . Я учу Java";
