@@ -3,7 +3,7 @@ package task.io;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListOfStudents {
+public class PlentyStudents {
     public void listStudents() {
 
 

@@ -3,8 +3,8 @@ package task.io;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CreatingFile {
-    public void creatingFile() throws IOException {
+public class FileCreator {
+    public void createFile() throws IOException {
 //        TODO: Напишите программу, которая создает новый файл и записывает в него данные, которые передаются
 //         строкой
         String expression = "Привет , меня зовут Илья . Я учу Java";
@@ -15,8 +15,7 @@ public class CreatingFile {
                 writer.write(expression.charAt(i));
             }
             System.out.println("Файл создан и записан");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException e){
         } finally {
             writer.close();
         }
