@@ -9,7 +9,7 @@ public class PrintReadTheFile {
         //  исключение, если файл не найден.
         FileReader reader = null;
             try {
-                reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\File.txt.txt");
+                reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\File.txt");
                 int character;
                 while ((character = reader.read()) != -1) {
                     System.out.print((char) character);

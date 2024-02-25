@@ -19,7 +19,7 @@ public class Car {
 
             }
         } catch (Exception e) {
-            System.out.println("Двигатель уже запущен");
+            System.out.println(e.getMessage());
         }
     }
 

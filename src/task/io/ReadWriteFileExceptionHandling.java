@@ -12,7 +12,7 @@ public class ReadWriteFileExceptionHandling {
 
         //Задача 1
         FileCreator fileCreator = new FileCreator();
-        fileCreator.createFile();
+        fileCreator.createFile("test");
 
         //Задача 2
         CreatorFileTheConsole creatorFileTheConsole = new CreatorFileTheConsole();

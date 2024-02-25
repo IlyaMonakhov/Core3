@@ -10,7 +10,8 @@ import java.util.function.Consumer;
 
 public class Stream {
     public static void main(String[] args) {
-        addingTwoNumbersBinaryOperator();
+        int i = addingTwoNumbersBinaryOperator();
+        System.out.println(i);
 
         listOfWordsPredicate();
 
@@ -24,9 +25,7 @@ public class Stream {
         Scanner scanner = new Scanner(System.in);
         List<Integer> integers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamSumNumbers streamSumNumbers = new StreamSumNumbers();
-        int sum = 0;
-        streamSumNumbers.sumNumbers(integers,sum);
-        System.out.println(streamSumNumbers.sumNumbers(integers,sum));
+        System.out.println(streamSumNumbers.sumNumbers(integers));
 
 
         //2 задача
@@ -135,8 +134,7 @@ public class Stream {
     public static List<Integer> functionNumbersSquared() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите числа");
-        List<Integer> listNumbers = new ArrayList<>();
-        listNumbers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        List<Integer> listNumbers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         Function<Integer, Integer> function = i -> i * i;
         for (Integer number : listNumbers) {
             System.out.println("Вывод списка в квадрате: " + function.apply(number));
