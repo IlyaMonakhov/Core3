@@ -1,26 +1,27 @@
 package task.io;
 
-import java.util.Scanner;
-
 public class BankAccount {
-    public void initialData() {
-        // TODO: Создайте класс, который представляет банковский счет. Реализуйте метод для снятия денег со
-        //  счета. Обработайте исключение, если на счете недостаточно средств.
-        int wallet = 10000;
-        Scanner console = new Scanner(System.in);
-        int withdrawal = console.nextInt();
-        withdrawalOfMoney(wallet,withdrawal);
 
+    private int withdrawal;
+
+    public BankAccount() {
+        this.withdrawal = withdrawal;
     }
-    public int withdrawalOfMoney(int wallet, int withdrawal){
-        try {
+
+
+
+
+
+    public int withdrawalOfMoney(int wallet, int withdrawal) throws IllegalAccessException {
+
             int remains = wallet - withdrawal;
-            if (withdrawal<wallet){
-                System.out.println("Остаток" + remains);
+            if (withdrawal> wallet) {
+                throw new IllegalAccessException("Столько денег нет на карте");
             }
-        } catch (Exception e) {
-           throw new RuntimeException(e);
-        }return -1;
+
+            return remains;
     }
 
 }
+// TODO: Создайте класс, который представляет банковский счет. Реализуйте метод для снятия денег со
+//  счета. Обработайте исключение, если на счете недостаточно средств.

@@ -2,17 +2,18 @@ package task.io;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class FileCreator {
-    public void createFile() throws IOException {
+    public void createFile(String massage) throws IOException {
 //        TODO: Напишите программу, которая создает новый файл и записывает в него данные, которые передаются
 //         строкой
-        String expression = "Привет , меня зовут Илья . Я учу Java";
+        Scanner scanner = new Scanner(System.in);
         FileWriter writer = null;
         try {
             writer = new FileWriter("C:\\Users\\Пользователь\\Desktop\\File.txt");
-            for (int i = 0; i < expression.length(); i++) {
-                writer.write(expression.charAt(i));
+            for (int i = 0; i < massage.length(); i++) {
+                writer.write(massage.charAt(i));
             }
             System.out.println("Файл создан и записан");
         } catch (IOException e){

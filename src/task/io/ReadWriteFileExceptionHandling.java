@@ -9,10 +9,15 @@ import java.util.Scanner;
 
 public class ReadWriteFileExceptionHandling {
     public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+
+
+
 
         //Задача 1
         FileCreator fileCreator = new FileCreator();
-        fileCreator.createFile();
+        String massage = scanner.nextLine();
+        fileCreator.createFile(massage);
 
         //Задача 2
         CreatorFileTheConsole creatorFileTheConsole = new CreatorFileTheConsole();
@@ -31,15 +36,23 @@ public class ReadWriteFileExceptionHandling {
         numberSquare.squareOfTheNumber();
 
         //5 задача
-        BankAccount bankAccount = new BankAccount();
-        int wallet = 10000;
         Scanner console = new Scanner(System.in);
-        int withdrawal = console.nextInt();
-        bankAccount.withdrawalOfMoney(wallet, withdrawal);
+        int wallet = 10000;
+        try {
+            BankAccount bankAccount = new BankAccount();
+            System.out.println("Введите сумму покупки");
+            int withdrawal = console.nextInt();
+            bankAccount.withdrawalOfMoney(wallet,withdrawal);
+            System.out.println("Остаток на счету : " + bankAccount.withdrawalOfMoney(wallet,withdrawal));
+
+        } catch (IllegalAccessException e) {
+            System.out.println(e.getMessage());
+        }
+
 
         //6 задача
         PrintReadTheFile printReadTheFile = new PrintReadTheFile();
-        printReadTheFile.printData();
+        printReadTheFile.fromFile();
 
 
         //7 задача
@@ -54,7 +67,7 @@ public class ReadWriteFileExceptionHandling {
 
         //9 задача
         DividingNumbers dividingNumbers = new DividingNumbers();
-        dividingNumbers.numbersAreGone();
+        dividingNumbers.undressedFirstAndSecondNumber();
 
         //10 задача
 
@@ -63,7 +76,7 @@ public class ReadWriteFileExceptionHandling {
 
         //11 задача
         NewFile newFile = new NewFile();
-        newFile.createFileFromText();
+        newFile.createFileByConsole();
 
 
     }

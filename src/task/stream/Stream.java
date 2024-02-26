@@ -10,23 +10,31 @@ import java.util.function.Consumer;
 
 public class Stream {
     public static void main(String[] args) {
-        addingTwoNumbersBinaryOperator();
 
-        listOfWordsPredicate();
+        int i = addingTwoNumbersBinaryOperator();
+        System.out.println("Ответ: " + i);
+
+
+
+        List<String> filteredList = new ArrayList<>();
+        listOfWordsPredicate(filteredList);
+        System.out.println(filteredList);
+
 
         functionNumbersSquared();
+
 
         upperCaseStrings();
 
         //Stream
+        Scanner scanner = new Scanner(System.in);
 
         //1 задача
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Напишите целые числа");
         List<Integer> integers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamSumNumbers streamSumNumbers = new StreamSumNumbers();
-        int sum = 0;
-        streamSumNumbers.sumNumbers(integers,sum);
-        System.out.println(streamSumNumbers.sumNumbers(integers,sum));
+        streamSumNumbers.sumNumbers(integers);
+        System.out.println(streamSumNumbers.sumNumbers(integers));
 
 
         //2 задача
@@ -38,18 +46,18 @@ public class Stream {
 
         //3 задача
         List<Integer> listFive = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        System.out.println("Введите числа");
         StreamMaxNumber streamMaxNumber = new StreamMaxNumber();
-        int max = 0;
-        streamMaxNumber.maxElement(listFive,max);
-        System.out.println(streamMaxNumber.maxElement(listFive, max));
+        streamMaxNumber.maxElement(listFive);
+        System.out.println(streamMaxNumber.maxElement(listFive));
 
 
         //4 задача
         List<Integer> listSix = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        System.out.println("Введите числа");
         StreamMinNumber streamMinNumber = new StreamMinNumber();
-        int min = 0;
-        streamMinNumber.minElement(listSix,min);
-        System.out.println(streamMinNumber.minElement(listSix,min));
+        streamMinNumber.minElement(listSix);
+        System.out.println(streamMinNumber.minElement(listSix));
 
 
         //5 задача
@@ -79,9 +87,8 @@ public class Stream {
         //8 задача
         List<String> listEleven = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
         StreamСonnector streamСonnector = new StreamСonnector();
-        String result = null;
-        streamСonnector.connectingStrings(listEleven,result);
-        System.out.println(streamСonnector.connectingStrings(listEleven,result));
+        streamСonnector.connectingStrings(listEleven);
+        System.out.println(streamСonnector.connectingStrings(listEleven));
 
         //9 задача
         List<Integer> listTwelve = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
@@ -110,15 +117,13 @@ public class Stream {
     // TODO: Напишите метод, который принимает список слов от пользователя и использует функциональный интерфейс Predicate
     //  для фильтрации слов, начинающихся с определенной буквы, и вывода отфильтрованного списка.
 
-    public static List<String> listOfWordsPredicate() {
+    public static List<String> listOfWordsPredicate(List<String> filteredList) {
         Scanner scn = new Scanner(System.in);
         String startingLetter = "P";
         Predicate<String> startsWithLetter = element -> element.startsWith(startingLetter);
         System.out.println("Введите список слов:");
-        List<String> words = new ArrayList<>();
-        words = List.of(scn.nextLine(), scn.nextLine(), scn.nextLine(), scn.nextLine());
+        List<String> words = List.of(scn.nextLine(), scn.nextLine(), scn.nextLine(), scn.nextLine());
 
-        List<String> filteredList = new ArrayList<>();
         for (String element : words) {
             if (startsWithLetter.test(element)) {
                 filteredList.add(element);
@@ -135,8 +140,7 @@ public class Stream {
     public static List<Integer> functionNumbersSquared() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите числа");
-        List<Integer> listNumbers = new ArrayList<>();
-        listNumbers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        List<Integer> listNumbers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         Function<Integer, Integer> function = i -> i * i;
         for (Integer number : listNumbers) {
             System.out.println("Вывод списка в квадрате: " + function.apply(number));
@@ -151,8 +155,8 @@ public class Stream {
     public static List<String> upperCaseStrings() {
 
         Scanner scanner = new Scanner(System.in);
-        List<String> listOfLines = new ArrayList<>();
-        listOfLines = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
+        System.out.println("Введите строки");
+        List<String> listOfLines = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
 
         Consumer<String> listOfLinesConsumer = line -> System.out.println(line.toUpperCase());
 

@@ -4,17 +4,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DividingNumbers {
-    public void numbersAreGone() throws Exception {
+    public void undressedFirstAndSecondNumber() throws Exception {
         // TODO: Напишите программу, которая делит одно число на другое и выводит результат. Обработайте
         //  исключение, если введены некорректные данные (например, вместо числа введена строка).
         Scanner input = new Scanner(System.in);
-        System.out.println("Введите первое целое число: ");
-
-        System.out.println("Введите второе целое число: ");
-
-
         try {
+            System.out.println("Введите первое целое число: ");
             int first = input.nextInt();
+            System.out.println("Введите второе целое число: ");
             int second = input.nextInt();
             int result = first / second;
 
