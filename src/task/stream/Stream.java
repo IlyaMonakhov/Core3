@@ -1,6 +1,7 @@
 package task.stream;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.BinaryOperator;
@@ -15,10 +16,8 @@ public class Stream {
         System.out.println("Ответ: " + i);
 
 
+        System.out.println(listOfWordsPredicate());
 
-        List<String> filteredList = new ArrayList<>();
-        listOfWordsPredicate(filteredList);
-        System.out.println(filteredList);
 
 
         functionNumbersSquared();
@@ -61,28 +60,27 @@ public class Stream {
 
 
         //5 задача
+        System.out.println("Введите числа , которые будут добавлены в список");
         List<Integer> listSeven = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        System.out.println("Введите элемент , который будем проверять");
         int element = scanner.nextInt();
         StreamAnyMatch streamAnyMatch = new StreamAnyMatch();
-        boolean elementFound = true;
-        streamAnyMatch.anyMatch(listSeven, element, elementFound);
-        boolean containsElement = streamAnyMatch.anyMatch(listSeven, element, elementFound);
+        streamAnyMatch.anyMatch(listSeven, element);
+        boolean containsElement = streamAnyMatch.anyMatch(listSeven, element);
         System.out.println(containsElement);
 
         //6 задача
-
+        System.out.println("Введите элементы которые будут добавлены в список");
         List<Integer> listEight = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamDistinct streamDistinct = new StreamDistinct();
-        List<Integer> listDistinct = new ArrayList<>();
-        streamDistinct.distinctNumber(listEight,listDistinct);
-        System.out.println(streamDistinct.distinctNumber(listEight,listDistinct));
+        streamDistinct.distinctNumber(listEight);
+        System.out.println(streamDistinct.distinctNumber(listEight));
 
         //7 задача
         List<String> listTen = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
         StreamMap streamMap = new StreamMap();
-        List<Integer> listLength = new ArrayList<>();
-        streamMap.listLengths(listTen,listLength);
-        System.out.println(streamMap.listLengths(listTen,listLength));
+        streamMap.listLengths(listTen);
+        System.out.println(streamMap.listLengths(listTen));
 
         //8 задача
         List<String> listEleven = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
@@ -93,9 +91,8 @@ public class Stream {
         //9 задача
         List<Integer> listTwelve = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         StreamFilter streamFilter = new StreamFilter();
-        List<Integer> listFilter = new ArrayList<>();
-        streamFilter.filter(listTwelve,listFilter);
-        System.out.println(streamFilter.filter(listTwelve,listFilter));
+        streamFilter.filter(listTwelve);
+        System.out.println(streamFilter.filter(listTwelve));
 
 
     }
@@ -117,36 +114,35 @@ public class Stream {
     // TODO: Напишите метод, который принимает список слов от пользователя и использует функциональный интерфейс Predicate
     //  для фильтрации слов, начинающихся с определенной буквы, и вывода отфильтрованного списка.
 
-    public static List<String> listOfWordsPredicate(List<String> filteredList) {
+    public static List<String> listOfWordsPredicate() {
         Scanner scn = new Scanner(System.in);
-        String startingLetter = "P";
+        System.out.println("Введите букву , по которой будет фильтр слов");
+        String startingLetter = scn.nextLine();
         Predicate<String> startsWithLetter = element -> element.startsWith(startingLetter);
         System.out.println("Введите список слов:");
         List<String> words = List.of(scn.nextLine(), scn.nextLine(), scn.nextLine(), scn.nextLine());
 
+        List<String> filteredWords = new ArrayList<>();
         for (String element : words) {
             if (startsWithLetter.test(element)) {
-                filteredList.add(element);
+                filteredWords.add(element);
             }
         }
 
-        return filteredList;
-
+        return filteredWords;
     }
 
 
     // TODO: Напишите метод, который принимает список чисел от пользователя и использует функциональный интерфейс Function
     //  для преобразования каждого числа в его квадрат и вывода списка квадратов.
-    public static List<Integer> functionNumbersSquared() {
+    public static void functionNumbersSquared() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите числа");
         List<Integer> listNumbers = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         Function<Integer, Integer> function = i -> i * i;
         for (Integer number : listNumbers) {
-            System.out.println("Вывод списка в квадрате: " + function.apply(number));
+            System.out.println("Вывод числа в квадрате: " + function.apply(number));
         }
-
-        return listNumbers;
     }
 
 

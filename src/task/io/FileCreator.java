@@ -17,6 +17,7 @@ public class FileCreator {
             }
             System.out.println("Файл создан и записан");
         } catch (IOException e){
+            System.out.println("Возникла ошибка");
         } finally {
             writer.close();
         }

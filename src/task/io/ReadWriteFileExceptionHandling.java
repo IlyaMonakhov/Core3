@@ -36,28 +36,19 @@ public class ReadWriteFileExceptionHandling {
         numberSquare.squareOfTheNumber();
 
         //5 задача
-        Scanner console = new Scanner(System.in);
-        int wallet = 10000;
-        try {
-            BankAccount bankAccount = new BankAccount();
-            System.out.println("Введите сумму покупки");
-            int withdrawal = console.nextInt();
-            bankAccount.withdrawalOfMoney(wallet,withdrawal);
-            System.out.println("Остаток на счету : " + bankAccount.withdrawalOfMoney(wallet,withdrawal));
-
-        } catch (IllegalAccessException e) {
-            System.out.println(e.getMessage());
-        }
+        BankAccount bankAccount = new BankAccount(10000);
+        bankAccount.makePurchase();
 
 
         //6 задача
         PrintReadTheFile printReadTheFile = new PrintReadTheFile();
-        printReadTheFile.fromFile();
+        FileReader reader = null;
+        printReadTheFile.printTextFromFile(reader);
 
 
         //7 задача
         String line = "Привет";
-        convertingAStringToANumber(line);
+        convertingStringToANumber(line);
 
         //8 задача
         List<String> students = List.of("Мария", "Степан", "Игорь");
@@ -119,7 +110,7 @@ public class ReadWriteFileExceptionHandling {
 
     // TODO: Создайте метод, который преобразует строку в число. Обработайте исключение, если строка не
     //  может быть преобразована в число.
-    public static void convertingAStringToANumber(String line) throws NumberFormatException {
+    public static void convertingStringToANumber(String line) throws NumberFormatException {
         try {
             int str = Integer.parseInt(line);
             System.out.println(str);

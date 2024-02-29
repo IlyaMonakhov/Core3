@@ -16,7 +16,7 @@ public class NewFile {
             writer.write(text);
             System.out.println("Файл создан и записан!");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("При создании и записи файла , произошла ошибка");;
         }
 
         try (FileReader reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\Str.txt");

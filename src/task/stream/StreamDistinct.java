@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 public class StreamDistinct {
 
-    public List<Integer> distinctNumber(List<Integer> listEight,List<Integer> listDistinct) {
-        return listDistinct = listEight.stream().distinct().collect(Collectors.toList());
+    public List<Integer> distinctNumber(List<Integer> listEight) {
+        return listEight.stream().distinct().collect(Collectors.toList());
 
     }
 }

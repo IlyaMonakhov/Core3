@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 public class StreamMap {
 
-    public List<Integer> listLengths(List<String> listTen,List<Integer> listLength) {
-        return listLength = listTen.stream().map(e -> e.length()).collect(Collectors.toList());
+    public List<Integer> listLengths(List<String> listTen) {
+        return listTen.stream().map(e -> e.length()).collect(Collectors.toList());
     }
 
 }
