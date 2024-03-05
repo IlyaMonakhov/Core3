@@ -25,7 +25,7 @@ public class NewFile {
             String firstWord = fileScanner.next();
             System.out.println("Первое слово из файла: " + firstWord);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("произошла ошибка");
         }
     }
 }

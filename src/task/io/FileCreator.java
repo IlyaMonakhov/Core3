@@ -8,7 +8,6 @@ public class FileCreator {
     public void createFile(String massage) throws IOException {
 //        TODO: Напишите программу, которая создает новый файл и записывает в него данные, которые передаются
 //         строкой
-        Scanner scanner = new Scanner(System.in);
         FileWriter writer = null;
         try {
             writer = new FileWriter("C:\\Users\\Пользователь\\Desktop\\File.txt");

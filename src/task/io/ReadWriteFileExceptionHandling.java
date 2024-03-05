@@ -42,8 +42,7 @@ public class ReadWriteFileExceptionHandling {
 
         //6 задача
         PrintReadTheFile printReadTheFile = new PrintReadTheFile();
-        FileReader reader = null;
-        printReadTheFile.printTextFromFile(reader);
+        printReadTheFile.printTextFromFile();
 
 
         //7 задача

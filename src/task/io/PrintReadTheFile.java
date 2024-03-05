@@ -4,9 +4,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PrintReadTheFile {
-    public void printTextFromFile(FileReader reader) throws Exception {
+    public void printTextFromFile() throws Exception {
         // TODO: Напишите программу, которая считывает данные из файла и выводит их на экран. Обработайте
         //  исключение, если файл не найден.
+        FileReader reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\File.txt");
             try {
                 reader = new FileReader("C:\\Users\\Пользователь\\Desktop\\File.txt");
                 int character;

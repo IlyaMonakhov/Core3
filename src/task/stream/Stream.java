@@ -1,7 +1,6 @@
 package task.stream;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.BinaryOperator;
@@ -84,9 +83,9 @@ public class Stream {
 
         //8 задача
         List<String> listEleven = List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
-        StreamСonnector streamСonnector = new StreamСonnector();
-        streamСonnector.connectingStrings(listEleven);
-        System.out.println(streamСonnector.connectingStrings(listEleven));
+        StreamConnect streamConnect = new StreamConnect();
+        streamConnect.connectingStrings(listEleven);
+        System.out.println(streamConnect.connectingStrings(listEleven));
 
         //9 задача
         List<Integer> listTwelve = List.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
